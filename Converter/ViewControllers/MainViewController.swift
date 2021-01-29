@@ -29,7 +29,8 @@ class MainViewController: UIViewController {
     
     var rate = Double() {
         didSet {
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 guard let text = self.amountTextField.text, let doubleValue = Double(text) else { return }
                 let result = self.rate * doubleValue
                 self.resultTextField.text = String(format: "%.2f", result)
