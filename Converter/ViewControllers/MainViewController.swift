@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
                 guard let self = self else { return }
                 guard let text = self.amountTextField.text, let doubleValue = Double(text) else { return }
                 let result = self.rate * doubleValue
-                self.resultTextField.text = String(format: "%.2f", result)
+                self.resultTextField.text = String(result)
             }
         }
     }
